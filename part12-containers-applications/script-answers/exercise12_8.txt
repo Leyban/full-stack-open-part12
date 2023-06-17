@@ -1,0 +1,192 @@
+Script started on 2023-06-17 19:39:41+08:00 [TERM="xterm-256color" TTY="/dev/pts/0" COLUMNS="190" LINES="50"]
+[?2004h[01;32muser@tns-des180[00m:[01;34m~/Desktop/FSO12/full-stack-open-part12/part12-containers-applications/script-answers[01;31m(master)[00m$ docker compose -f dock[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[01;32muser@tns-des180[00m:[01;34m~/Desktop/FSO12/full-stack-open-part12/part12-containers-applications/script-answers[01;31m(master)[00m$ [K[01;32muser@tns-des180[00m:[01;34m~/Desktop/FSO12/full-stack-open-part12/part12-containers-applications/script-answers[01;31m(master)[00m$ [K[01;32muser@tns-des180[00m:[01;34m~/Desktop/FSO12/full-stack-open-part12/part12-containers-applications/script-answers[01;31m(master)[00m$ [K[01;32muser@tns-des180[00m:[01;34m~/Desktop/FSO12/full-stack-open-part12/part12-containers-applications/script-answers[01;31m(master)[00m$ [K[01;32muser@tns-des180[00m:[01;34m~/Desktop/FSO12/full-stack-open-part12/part12-containers-applications/script-answers[01;31m(master)[00m$ [K[01;32muser@tns-des180[00m:[01;34m~/Desktop/FSO12/full-stack-open-part12/part12-containers-applications/script-answers[01;31m(master)[00m$ [K[01;32muser@tns-des180[00m:[01;34m~/Desktop/FSO12/full-stack-open-part12/part12-containers-applications/script-answers[01;31m(master)[00m$ [K[01;32muser@tns-des180[00m:[01;34m~/Desktop/FSO12/full-stack-open-part12/part12-containers-applications/script-answers[01;31m(master)[00m$ docker exec -it [K[K[K[K[K[K[K[K[K[K ps
+[?2004lCONTAINER ID   IMAGE     COMMAND                  CREATED              STATUS              PORTS                                         NAMES
+52c8d6976935   mongo     "docker-entrypoint.s…"   About a minute ago   Up About a minute   0.0.0.0:3456->27017/tcp, :::3456->27017/tcp   todo-backend-mongo-1
+8a3a374aceed   nginx     "/docker-entrypoint.…"   18 minutes ago       Up 18 minutes       0.0.0.0:8080->80/tcp, :::8080->80/tcp         jolly_austin
+[?2004h[01;32muser@tns-des180[00m:[01;34m~/Desktop/FSO12/full-stack-open-part12/part12-containers-applications/script-answers[01;31m(master)[00m$ docker exec -it mong[K[K[K[Ktodo-backend-mongo-1 moch[K[Kngosh
+[?2004l]0;mongosh mongodb://127.0.0.1:27017/?directConnection=true&serverSelectionTimeoutMS=2000Current Mongosh Log ID:	648d9c01a44cd904022ac060
+Connecting to:		[1m[32mmongodb://127.0.0.1:27017/?directConnection=true&serverSelectionTimeoutMS=2000&appName=mongosh+1.10.0[0m
+Using MongoDB:		6.0.6
+[1m[33mUsing Mongosh[0m:		1.10.0
+
+For mongosh info see: [1mhttps://docs.mongodb.com/mongodb-shell/[0m
+
+
+To help improve our products, anonymous usage data is collected and sent to MongoDB periodically (https://www.mongodb.com/legal/privacy-policy).
+You can opt-out by running the [1mdisableTelemetry()[0m command.
+
+[1G[0J [1G[1G[0Jtest> [7G[1G[0Jtest> [7G[1G[0Jtest> [7G[1G[0Jtest> [7G[1G[0Jtest> [7G[1G[0Jtest> [7Gshow dbs
+Uncaught [1m[31mMongoServerError[0m: command listDatabases requires authentication
+[1G[0Jtest> [7Gexit
+[?2004h[01;32muser@tns-des180[00m:[01;34m~/Desktop/FSO12/full-stack-open-part12/part12-containers-applications/script-answers[01;31m(master)[00m$ docker ps
+[?2004lCONTAINER ID   IMAGE     COMMAND                  CREATED          STATUS          PORTS                                         NAMES
+52c8d6976935   mongo     "docker-entrypoint.s…"   2 minutes ago    Up 2 minutes    0.0.0.0:3456->27017/tcp, :::3456->27017/tcp   todo-backend-mongo-1
+8a3a374aceed   nginx     "/docker-entrypoint.…"   19 minutes ago   Up 19 minutes   0.0.0.0:8080->80/tcp, :::8080->80/tcp         jolly_austin
+[?2004h[01;32muser@tns-des180[00m:[01;34m~/Desktop/FSO12/full-stack-open-part12/part12-containers-applications/script-answers[01;31m(master)[00m$ docker exec -it todo-backend-mongo-1 mongosh -u [K[01;32muser@tns-des180[00m:[01;34m~/Desktop/FSO12/full-stack-open-part12/part12-containers-applications/script-answers[01;31m(master)[00m$ docker exec -it todo-backend-mongo-1 mongosh -u [K[01;32muser@tns-des180[00m:[01;34m~/Desktop/FSO12/full-stack-open-part12/part12-containers-applications/script-answers[01;31m(master)[00m$ docker exec -it todo-backend-mongo-1 mongosh -u [K[01;32muser@tns-des180[00m:[01;34m~/Desktop/FSO12/full-stack-open-part12/part12-containers-applications/script-answers[01;31m(master)[00m$ docker exec -it todo-backend-mongo-1 mongosh -u [K[01;32muser@tns-des180[00m:[01;34m~/Desktop/FSO12/full-stack-open-part12/part12-containers-applications/script-answers[01;31m(master)[00m$ docker exec -it todo-backend-mongo-1 mongosh -u root -p exampls[Ke
+[?2004l]0;mongosh mongodb://<credentials>@127.0.0.1:27017/?directConnection=true&serverSelectionTimeoutMS=2000Current Mongosh Log ID:	648d9c5282a10096f3b34af5
+Connecting to:		[1m[32mmongodb://<credentials>@127.0.0.1:27017/?directConnection=true&serverSelectionTimeoutMS=2000&appName=mongosh+1.10.0[0m
+Using MongoDB:		6.0.6
+[1m[33mUsing Mongosh[0m:		1.10.0
+
+For mongosh info see: [1mhttps://docs.mongodb.com/mongodb-shell/[0m
+
+[1G[0J [1G[1m[33m------[0m
+   [1m[33mThe server generated these startup warnings when booting[0m
+   2023-06-17T11:40:26.811+00:00: Using the XFS filesystem is strongly recommended with the WiredTiger storage engine. See http://dochub.mongodb.org/core/prodnotes-filesystem
+   2023-06-17T11:40:27.066+00:00: vm.max_map_count is too low
+[1m[33m------[0m
+
+[1G[0Jtest> [7Gshow dbs
+[1madmin[0m         100.00 KiB
+[1mconfig[0m        108.00 KiB
+[1mlocal[0m          72.00 KiB
+[1mthe_database[0m   72.00 KiB
+[1G[0Jtest> [7Guse the_database
+switched to db the_database
+[1G[0Jthe_database> [15Gshow collections
+[1mtodos[0m
+[1G[0Jthe_database> [15Gdb.todos.fins[1G[0Jthe_database> db.todos.fin[27Gd({})
+[
+  {
+    _id: ObjectId("648d803f21b23d9ab3b5935c"),
+    text: [32m'test todos'[39m,
+    done: [33mtrue[39m
+  },
+  {
+    _id: ObjectId("648d803f21b23d9ab3b5935d"),
+    text: [32m'Learn about containers'[39m,
+    done: [33mfalse[39m
+  },
+  {
+    _id: ObjectId("648d8b91f986faf44d8232d0"),
+    text: [32m'test todos'[39m,
+    done: [33mfalse[39m,
+    __v: [33m0[39m
+  },
+  {
+    _id: ObjectId("648d8d8ef986faf44d8232d5"),
+    text: [32m'test todos'[39m,
+    done: [33mfalse[39m,
+    __v: [33m0[39m
+  },
+  {
+    _id: ObjectId("648d8ee4f986faf44d8232d7"),
+    text: [32m'test todos'[39m,
+    done: [33mfalse[39m,
+    __v: [33m0[39m
+  },
+  {
+    _id: ObjectId("648d8ee5f986faf44d8232d9"),
+    text: [32m'test todos'[39m,
+    done: [33mfalse[39m,
+    __v: [33m0[39m
+  },
+  {
+    _id: ObjectId("648d8ee5f986faf44d8232db"),
+    text: [32m'test todos'[39m,
+    done: [33mfalse[39m,
+    __v: [33m0[39m
+  },
+  {
+    _id: ObjectId("648d8ef4f986faf44d8232dd"),
+    text: [32m'test todos'[39m,
+    done: [33mfalse[39m,
+    __v: [33m0[39m
+  },
+  {
+    _id: ObjectId("648d8efaf986faf44d8232df"),
+    text: [32m'test todos'[39m,
+    done: [33mfalse[39m,
+    __v: [33m0[39m
+  },
+  {
+    _id: ObjectId("648d8f00f986faf44d8232e1"),
+    text: [32m'test todos'[39m,
+    done: [33mfalse[39m,
+    __v: [33m0[39m
+  }
+]
+[1G[0Jthe_database> [15Gdb.todos.inserr[1G[0Jthe_database> db.todos.inser[29Gto[1G[0Jthe_database> db.todos.insertOne[33G({text[33mtext[39m:[32m"[39m[32mI[39m[32mn[39m[32mc[39m[32mr[39m[32me[39m[32ma[39m[32ms[39m[32me[39m [32mt[39m[32mh[39m[32me[39m [32mn[39m[32mu[39m[32mm[39m[32mb[39m[32me[39m[32mr[39m [32mo[39m[32mf[39m [32mt[39m[32mo[39m[32mo[39m[32ml[39m[32ms[39m [32mi[39m[32mn[39m [32mm[39m[32my[39m [32mt[39m[32mo[39m[32mo[39m[32ml[39m[32mb[39m[32me[39m[32ml[39m[32mt[39m[32m"[39m, d[36mdo[39mdone:[32m"[39m[1G[0Jthe_database> db.todos.insertOne({[33mtext[39m:[32m"Increase the number of tools in my toolbelt"[39m, [33mdone[39m:[92Gfals[33mfalse[39m})
+{
+  acknowledged: [33mtrue[39m,
+  insertedId: ObjectId("648d9cea82a10096f3b34af6")
+}
+[1G[0Jthe_database> [15Gdb.todos.find({id[33mid[39m:[33m6[39m[33m4[39m[33m8[39m648d9cea82a10096f3b34af6[32m"[39m[1D[1G[0Jthe_database> db.todos.find({[33mid[39m:648d9cea82a10096f3b34af6[32m"[39m[57G[24D[1G[0Jthe_database> db.todos.find({[33mid[39m:648d9cea82a10096f3b34af6[32m"[39m[33G[1D[1C[1G[0Jthe_database> db.todos.find({[33mid[39m:[32m"648d9cea82a10096f3b34af6"[39m[34G[25C})
+
+[1G[0Jthe_database> [15G[1G[0Jthe_database> db.todos.find({[33mid[39m:[32m"648d9cea82a10096f3b34af6"[39m})[61G[1D[1G[0Jthe_database> db.todos.find[44m([49m{[33mid[39m:[32m"648d9cea82a10096f3b34af6"[39m})[60G[1D[1G[0Jthe_database> db.todos.find([44m{[49m[33mid[39m:[32m"648d9cea82a10096f3b34af6"[39m})[59G[1D[1G[0Jthe_database> db.todos.find({[33mid[39m:[44m[32m"[49m648d9cea82a10096f3b34af6"[39m})[58G[1D[1G[0Jthe_database> db.todos.find({[33mid[39m:[32m"648d9cea82a10096f3b34af6"[39m})[57G[1D[1D[1D[1D[1D[1D[1D[1D[1D[1D[1D[1D[1D[1D[1D[1D[1D[1D[1D[1D[1D[1D[1D[1D[1G[0Jthe_database> db.todos.find({[33mid[39m:[32m"648d9cea82a10096f3b34af6[44m"[39m[49m})[33G[1D[1G[0Jthe_database> db.todos.find({[33mid[39m:[32m"648d9cea82a10096f3b34af6"[39m})[32G[1D[1D[1D[1G[0Jthe_database> db.todos.find({[33mid[39m:[32m"648d9cea82a10096f3b34af6"[39m[44m}[49m)[29G[1D[1G[0Jthe_database> db.todos.find({[33mid[39m:[32m"648d9cea82a10096f3b34af6"[39m}[44m)[49m[28G[1G[0Jthe_database> db.todos.findO({[33mid[39m:[32m"648d9cea82a10096f3b34af6"[39m}[44m)[49m[29G[1G[0Jthe_database> db.todos.findOne({[33mid[39m:[32m"648d9cea82a10096f3b34af6"[39m}[44m)[49m[31G[33C[1G[0Jthe_database> db.todos.findOne({[33mid[39m:[32m"648d9cea82a10096f3b34af6"[39m})[64G
+[1mnull[22m
+[1G[0Jthe_database> [15G[1G[0Jthe_database> db.todos.findOne({[33mid[39m:[32m"648d9cea82a10096f3b34af6"[39m})[64G[1D[1G[0Jthe_database> db.todos.findOne[44m([49m{[33mid[39m:[32m"648d9cea82a10096f3b34af6"[39m})[63G[2D[1G[0Jthe_database> db.todos.findOne({[33mid[39m:[44m[32m"[49m648d9cea82a10096f3b34af6"[39m})[61G[24D[1G[0Jthe_database> db.todos.findOne({[33mid[39m:[32m"648d9cea82a10096f3b34af6"[39m})[37G[2D[2D[2D[1G[0Jthe_database> db.todos.findOne({[33mid[39m:[32m"648d9cea82a10096f3b34af6"[39m}[44m)[49m[31G[1G[0Jthe_database> db.todos.findOn({[33mid[39m:[32m"648d9cea82a10096f3b34af6"[39m}[44m)[49m[30G[1G[0Jthe_database> db.todos.findO({[33mid[39m:[32m"648d9cea82a10096f3b34af6"[39m}[44m)[49m[29G[1G[0Jthe_database> db.todos.find({[33mid[39m:[32m"648d9cea82a10096f3b34af6"[39m}[44m)[49m[28G[2C[1G[0Jthe_database> db.todos.find({[33mid[39m:[32m"648d9cea82a10096f3b34af6"[39m})[30G[1C[1D[1G[0Jthe_database> db.todos.find({[33m_id[39m:[32m"648d9cea82a10096f3b34af6"[39m})[31G[31C
+
+[1G[0Jthe_database> [15G[1G[0Jthe_database> db.todos.find({[33m_id[39m:[32m"648d9cea82a10096f3b34af6"[39m})[62G[3D[1G[0Jthe_database> db.todos.find({[33m_id[39m:[44m[32m"[49m648d9cea82a10096f3b34af6"[39m})[59G[1C[1G[0Jthe_database> db.todos.find([44m{[49m[33m_id[39m:[32m"648d9cea82a10096f3b34af6"[39m})[60G[1G[0Jthe_database> db.todos.find({[33m_id[39m:[32m"648d9cea82a10096f3b34af6})[39m[59G[1G[0Jthe_database> db.todos.find({[33m_id[39m:[32m"648d9cea82a10096f3b34af})[39m[58G[1G[0Jthe_database> db.todos.find({[33m_id[39m:[32m"648d9cea82a10096f3b34a})[39m[57G[1G[0Jthe_database> db.todos.find({[33m_id[39m:[32m"648d9cea82a10096f3b34})[39m[56G[1G[0Jthe_database> db.todos.find({[33m_id[39m:[32m"648d9cea82a10096f3b3})[39m[55G[1G[0Jthe_database> db.todos.find({[33m_id[39m:[32m"648d9cea82a10096f3b})[39m[54G[1G[0Jthe_database> db.todos.find({[33m_id[39m:[32m"648d9cea82a10096f3})[39m[53G[1G[0Jthe_database> db.todos.find({[33m_id[39m:[32m"648d9cea82a10096f})[39m[52G[1G[0Jthe_database> db.todos.find({[33m_id[39m:[32m"648d9cea82a10096})[39m[51G[1G[0Jthe_database> db.todos.find({[33m_id[39m:[32m"648d9cea82a1009})[39m[50G[1G[0Jthe_database> db.todos.find({[33m_id[39m:[32m"648d9cea82a100})[39m[49G[1G[0Jthe_database> db.todos.find({[33m_id[39m:[32m"648d9cea82a10})[39m[48G[1G[0Jthe_database> db.todos.find({[33m_id[39m:[32m"648d9cea82a1})[39m[47G[1G[0Jthe_database> db.todos.find({[33m_id[39m:[32m"648d9cea82a})[39m[46G[1G[0Jthe_database> db.todos.find({[33m_id[39m:[32m"648d9cea82})[39m[45G[1G[0Jthe_database> db.todos.find({[33m_id[39m:[32m"648d9cea8})[39m[44G[1G[0Jthe_database> db.todos.find({[33m_id[39m:[32m"648d9cea})[39m[43G[1G[0Jthe_database> db.todos.find({[33m_id[39m:[32m"648d9ce})[39m[42G[1G[0Jthe_database> db.todos.find({[33m_id[39m:[32m"648d9c})[39m[41G[1G[0Jthe_database> db.todos.find({[33m_id[39m:[32m"648d9})[39m[40G[1G[0Jthe_database> db.todos.find({[33m_id[39m:[32m"648d})[39m[39G[1G[0Jthe_database> db.todos.find({[33m_id[39m:[32m"648})[39m[38G[1G[0Jthe_database> db.todos.find({[33m_id[39m:[32m"64})[39m[37G[1G[0Jthe_database> db.todos.find({[33m_id[39m:[32m"6})[39m[36G[1G[0Jthe_database> db.todos.find({[33m_id[39m:[32m"})[39m[35G[1G[0Jthe_database> db.todos.find([44m{[49m[33m_id[39m:})[34G[1G[0Jthe_database> db.todos.find([44m{[49m_id})[33G[1G[0Jthe_database> db.todos.find([44m{[49m_i})[32G[1G[0Jthe_database> db.todos.find([44m{[49m_})[31G[1G[0Jthe_database> db.todos.find([44m{[49m})[30G[2C[1G[0Jthe_database> db.todos.find({})[32G
+[
+  {
+    _id: ObjectId("648d803f21b23d9ab3b5935c"),
+    text: [32m'test todos'[39m,
+    done: [33mtrue[39m
+  },
+  {
+    _id: ObjectId("648d803f21b23d9ab3b5935d"),
+    text: [32m'Learn about containers'[39m,
+    done: [33mfalse[39m
+  },
+  {
+    _id: ObjectId("648d8b91f986faf44d8232d0"),
+    text: [32m'test todos'[39m,
+    done: [33mfalse[39m,
+    __v: [33m0[39m
+  },
+  {
+    _id: ObjectId("648d8d8ef986faf44d8232d5"),
+    text: [32m'test todos'[39m,
+    done: [33mfalse[39m,
+    __v: [33m0[39m
+  },
+  {
+    _id: ObjectId("648d8ee4f986faf44d8232d7"),
+    text: [32m'test todos'[39m,
+    done: [33mfalse[39m,
+    __v: [33m0[39m
+  },
+  {
+    _id: ObjectId("648d8ee5f986faf44d8232d9"),
+    text: [32m'test todos'[39m,
+    done: [33mfalse[39m,
+    __v: [33m0[39m
+  },
+  {
+    _id: ObjectId("648d8ee5f986faf44d8232db"),
+    text: [32m'test todos'[39m,
+    done: [33mfalse[39m,
+    __v: [33m0[39m
+  },
+  {
+    _id: ObjectId("648d8ef4f986faf44d8232dd"),
+    text: [32m'test todos'[39m,
+    done: [33mfalse[39m,
+    __v: [33m0[39m
+  },
+  {
+    _id: ObjectId("648d8efaf986faf44d8232df"),
+    text: [32m'test todos'[39m,
+    done: [33mfalse[39m,
+    __v: [33m0[39m
+  },
+  {
+    _id: ObjectId("648d8f00f986faf44d8232e1"),
+    text: [32m'test todos'[39m,
+    done: [33mfalse[39m,
+    __v: [33m0[39m
+  },
+  {
+    _id: ObjectId("648d9cea82a10096f3b34af6"),
+    text: [32m'Increase the number of tools in my toolbelt'[39m,
+    done: [33mfalse[39m
+  }
+]
+[1G[0Jthe_database> [15G[1G[0Jthe_database> db.todos.find({})[32G[1G[0Jthe_database> db.todos.find({[33m_id[39m:[32m"648d9cea82a10096f3b34af6"[39m})[62G[1D[1G[0Jthe_database> db.todos.find[44m([49m{[33m_id[39m:[32m"648d9cea82a10096f3b34af6"[39m})[61G[1D[1G[0Jthe_database> db.todos.find([44m{[49m[33m_id[39m:[32m"648d9cea82a10096f3b34af6"[39m})[60G[1G[0Jthe_database> db.todos.find({[33m_id[39m:[32m"648d9cea82a10096f3b34af6})[39m[59G[1G[0Jthe_database> db.todos.find({[33m_id[39m:[32m"648d9cea82a10096f3b34af6'})[39m[60G[1D[1G[0Jthe_database> db.todos.find({[33m_id[39m:[32m"648d9cea82a10096f3b34af6'})[39m[59G[24D[1G[0Jthe_database> db.todos.find({[33m_id[39m:[32m"648d9cea82a10096f3b34af6'})[39m[35G[1G[0Jthe_database> db.todos.find({[33m_id[39m:648d9cea82a10096f3b34af6[32m'})[39m[34G[1G[0Jthe_database> db.todos.find({[33m_id[39m:[32m'648d9cea82a10096f3b34af6'[39m})[35G[27C
+
+[1G[0Jthe_database> [15Gexit
+[?2004h[01;32muser@tns-des180[00m:[01;34m~/Desktop/FSO12/full-stack-open-part12/part12-containers-applications/script-answers[01;31m(master)[00m$ [?2004l
+exit
+
+Script done on 2023-06-17 19:49:30+08:00 [COMMAND_EXIT_CODE="0"]
