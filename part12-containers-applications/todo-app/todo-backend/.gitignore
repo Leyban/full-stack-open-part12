@@ -60,5 +60,8 @@ typings/
 # next.js build output
 .next
 
-#mongoDB persist data
+# mongoDB persist data
 mongo_data/
+
+# redis persist data
+redis_data/
