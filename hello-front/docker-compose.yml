@@ -7,5 +7,7 @@ services:
     volumes:
       - ./:/usr/src/app
     ports:
-      - 3000:3000
+      - 3213:3000
     container_name: hello-front-dev
+  debug-helper:
+    image: busybox

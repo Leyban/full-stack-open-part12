@@ -21,5 +21,15 @@ services:
     volumes:
       - ./redis_data:/data
     
-volumes:
-  mongo_data:
+  server:
+    build: 
+      context: .
+      dockerfile: dev.Dockerfile
+    image: todo-backend-dev
+    volumes:
+      - ./:/usr/src/app
+    ports:
+      - 3000:3000
+    environment:
+      - MONGO_URL=mongodb://the_username:the_password@mongo:27017/the_database
+      - REDIS_URL=redis://redis:6379
