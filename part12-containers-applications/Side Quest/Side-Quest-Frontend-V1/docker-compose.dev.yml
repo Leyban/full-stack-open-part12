@@ -1,0 +1,8 @@
+services:
+  app:
+    image: side-quest-frontend
+    build: .
+    volumes:
+      - ./:./usr/app/src
+    ports:
+      - 8000:3000
