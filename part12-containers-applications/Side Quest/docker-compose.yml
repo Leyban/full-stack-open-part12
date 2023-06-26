@@ -1,0 +1,38 @@
+services:
+  mongo:
+    image: mongo
+    environment:
+      MONGO_INITDB_ROOT_USERNAME: the_username
+      MONGO_INITDB_ROOT_PASSWORD: the_password
+      MONGO_INITDB_DATABASE: sidequestdb
+    volumes:
+    - ./Side-Quest-Backend-V1/mongo-init.js:/docker-entrypoint-initdb.d/mongo-init.js
+    - ./Side-Quest-Backend-V1/mongo_data:/data/db
+
+  server:
+    image: side-quest-backend
+    environment:
+      - SECRET=SuperSecretStringOMG
+      - MONGODB_URI=mongodb://the_username:the_password@mongo:27017/sidequestdb
+    ports:
+      - 4000:4000
+    depends_on:
+      - mongo
+
+  app:
+    image: side-quest-frontend
+    environment:
+      - REACT_APP_HTTPS_URI=http://localhost:8080/api/
+    volumes:
+      - ./Side-Quest-Frontend-V1:/usr/src/app
+    container_name: side-quest-frontend
+
+  nginx:
+    image: nginx:1.20.1
+    volumes:
+      - ./nginx.conf:/etc/nginx/nginx.conf:ro
+    ports:
+      - 8080:80
+    container_name: reverse-proxy
+    depends_on:
+      - app
