@@ -21,8 +21,8 @@ const schema = new mongoose.Schema({
   },
   ongoing: [
     {
-		type: mongoose.Schema.Types.ObjectId,
-		ref: 'Task',
+      type: mongoose.Schema.Types.ObjectId,
+      ref: 'Task',
     }
   ],
   tags: [

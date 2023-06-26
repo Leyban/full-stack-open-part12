@@ -2,7 +2,8 @@ services:
   app:
     image: side-quest-frontend
     build: .
-    volumes:
-      - ./:./usr/app/src
+    environment:
+      - REACT_APP_HTTPS_URI=http://localhost:4000/
     ports:
-      - 8000:3000
+      - 8000:80
+    container_name: side-quest-frontend
